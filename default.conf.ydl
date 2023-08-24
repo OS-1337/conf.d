@@ -1,0 +1,84 @@
+#   OS/1337 default system configuration file
+##  These are the defaults of OS/1337 out of the box.
+#!  This file is written in [YADL](https://github.com/greyhat-academy/yadl)
+### Configuration is inspired by [Netplan.io](https://netplan.io/) and [Raspberry Pi config.txt](https://www.raspberrypi.com/documentation/computers/config_txt.html)tho not compatible to either.
+####    Configured public servers were taken from [lists.d repository](https://github.com/greyhat-academy/lists.d/)
+
+---
+### initial login
+#!! It it highly recommended to reconfigure these!
+default_user: enabled
+	username: root
+	password: os1337
+	su: yes
+
+---
+### network configuration
+#!  You'll have to adapt these if you want to enable SSH'ing into the system from a public IP or have IPv6 connectivity.
+network
+	defaults:
+		ntp:
+			ntp.nict.jp
+			time.nist.gov
+		dns:
+			ipv4:
+				94.103.153.176
+				144.76.103.143
+			ipv6:
+				2a02:990:219:1:ba:1337:cafe:3
+				2a01:4f8:192:43a5::2
+	interfaces:
+		ethernets:  enabled
+			eth0:
+				mac:    default
+				ipv4:   enabled
+					dhcp4:  true
+				ipv6:   disabled
+					dhcp6:  false
+		wifis:  enabled
+			wl0:
+				mac:    default
+				ipv4:   enabled
+					dhcp4:  true
+				ipv6:   disabled
+					dhcp6:  false
+				access-points:
+					"network_ssid_name":
+					auth:   password
+	                    # key-management: eap
+	                    # method: lts
+	                    # anonymous-identity:   "@user.example.com"
+	                    # identity: "xavier@user.example.com"
+	                    # ca-certificate:   /etc/ssl/ca.pem
+	                    # client-certificate:   /etc/ssl/user.pem
+	                    # client-key:   /etc/ssl/cust-key.pem
+	                    # client-key-password:  "insecure"
+						password:   "network_password"
+#		tunnels:   disabled
+#			wg0:
+#				mode: wireguard
+#				port: 51821 
+#				key: ""
+#				enpoint:  198.51.100.0:51821
+#				pubkey: ""
+#               addresses:
+#					ipv4:   enabled
+#						dhcp4:  true
+#					ipv6:   disabled
+#						dhcp6:  false
+#		modems: disabled
+#			# iridium:
+#				mode: ppp
+#				interface: ttyUSB0
+#				    type:   serial
+#					    speed:    19200/8/N/1
+#				number:   +8816000026
+#				username: iridium
+#				password: iridium
+#				speed: 2400
+#				compression: disabled
+#				auto-connect: disabled
+#				timeout: 60
+#				auto-disconnect: disabled
+
+---
