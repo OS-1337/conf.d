@@ -1,2 +1,5 @@
 # conf.d
-default configurations of OS/1337
+### Default Configuration Files of OS/1337
+
+---
+
