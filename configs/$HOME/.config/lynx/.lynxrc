@@ -1,0 +1,2 @@
+STARTFILE:file://localhost/etc/lynx/home.html
+bookmark_file=$HOME/.config/lynx/bookmarks.html

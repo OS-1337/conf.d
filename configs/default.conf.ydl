@@ -1,25 +1,31 @@
 #   OS/1337 default system configuration file
 ##  These are the defaults of OS/1337 out of the box.
 #!  This file is written in [YADL](https://github.com/greyhat-academy/yadl)
-### Configuration is inspired by [Netplan.io](https://netplan.io/) and [Raspberry Pi config.txt](https://www.raspberrypi.com/documentation/computers/config_txt.html)tho not compatible to either.
+### Configuration is inspired by [Netplan.io](https://netplan.io/) and [Raspberry Pi config.txt](https://www.raspberrypi.com/documentation/computers/config_txt.html) tho not compatible to either.
 ####    Configured public servers were taken from [lists.d repository](https://github.com/greyhat-academy/lists.d/)
 
 ---
 ### initial login
 #!! It it highly recommended to reconfigure these!
+````
 default_user: enabled
 	username: root
 	password: os1337
 	su: yes
+````
 
 ---
 ### network configuration
+````
 #!  You'll have to adapt these if you want to enable SSH'ing into the system from a public IP or have IPv6 connectivity.
 network
 	defaults:
 		ntp:
+			ptbtime1.ptb.de
 			ntp.nict.jp
 			time.nist.gov
+			ntp.ripe.net
+			time.esa.int
 		dns:
 			ipv4:
 				94.103.153.176
@@ -59,7 +65,7 @@ network
 #				mode: wireguard
 #				port: 51821 
 #				key: ""
-#				enpoint:  198.51.100.0:51821
+#				enpoint:  endpoint.example.com:51821
 #				pubkey: ""
 #               addresses:
 #					ipv4:   enabled
@@ -80,5 +86,6 @@ network
 #				auto-connect: disabled
 #				timeout: 60
 #				auto-disconnect: disabled
+````
 
 ---
