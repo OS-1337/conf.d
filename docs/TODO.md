@@ -10,4 +10,4 @@
         - [Homepage](/configs/etc/lynx/home.html)
       - [Lynx User Config](/configs/$HOME/.config/lynx/.lynxrc)
     - bash
-      - [User Config](/configs/$HOME/.bash_aliases)
+      - [User Config](/configs/$HOME/.config/.bash_aliases)
