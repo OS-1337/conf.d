@@ -27,6 +27,7 @@ time.esa.int
 2a01:4f8:192:43a5::2
 ````
 - Both are [OpenNIC Tier 1 Public Servers](https://servers.opennic.org/) and this extend the namespace beyond the ICANN-Rootzone.
+##### NOTE: The "CORE" Version of OS/1337 does not come with IPv6 support!!!
 ###
 
 ### Other Entries in [default.conf.ydl](../configs/default.conf.ydl)
